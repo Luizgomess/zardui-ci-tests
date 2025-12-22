@@ -1,3 +1,13 @@
+## 1.0.0-beta.17 (2025-12-22)
+
+### ✨ Features
+
+- additional AI fix for foutc caching issue ([0ffa310](https://github.com/Luizgomess/zardui-ci-tests/commit/0ffa310))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.16 (2025-12-22)
 
 ### ✨ Features
