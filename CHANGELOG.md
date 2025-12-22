@@ -1,3 +1,13 @@
+## 1.0.0-beta.10 (2025-12-22)
+
+### ✨ Features
+
+- script location change ([bd2b962](https://github.com/Luizgomess/zardui-ci-tests/commit/bd2b962))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.9 (2025-12-22)
 
 This was a version bump only, there were no code changes.
