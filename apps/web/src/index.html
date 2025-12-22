@@ -1,27 +1,21 @@
 <!doctype html>
 <html lang="en" class="layout-fixed">
   <head>
-    <script>
-      let hasBody = !!document && !!document.body;
-      let hasDocument = !!document && !!document.documentElement;
-      let systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (localStorage.darkMode === 'dark' && hasDocument) {
-        document.documentElement.classList.add('dark');
-      } else if (localStorage.darkMode === 'light' && hasDocument) {
-        document.documentElement.classList.remove('dark');
-      } else if (systemDarkMode && hasDocument) {
-        localStorage.setItem('darkMode', 'system');
-        document.documentElement.classList.add('dark');
-      } else if (hasDocument) {
-        document.documentElement.classList.remove('dark');
-      }
-    </script>
-
     <meta charset="utf-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/src/styles.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=block"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=block" rel="stylesheet" />
+    </noscript>
 
     <link rel="icon" href="/site/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/site/apple-touch-icon.png" />
@@ -76,6 +70,74 @@
       }
     </script>
 
+    <style>
+      /* Critical CSS to prevent layout shifts */
+      html,
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+      }
+
+      /* Ensure dark mode is applied immediately */
+      .dark {
+        color-scheme: dark;
+      }
+
+      /* Hide content until fonts are loaded to prevent FOUTC */
+      .font-loading {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .font-loaded {
+        opacity: 1;
+      }
+    </style>
+
+    <script>
+      // Font loading strategy
+      document.documentElement.classList.add('font-loading');
+
+      // Check if fonts are already loaded
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          document.documentElement.classList.remove('font-loading');
+          document.documentElement.classList.add('font-loaded');
+        });
+      } else {
+        // Fallback for browsers without Font Loading API
+        setTimeout(function () {
+          document.documentElement.classList.remove('font-loading');
+          document.documentElement.classList.add('font-loaded');
+        }, 1000);
+      }
+
+      let hasBody = !!document && !!document.body;
+      let hasDocument = !!document && !!document.documentElement;
+      let systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (localStorage.darkMode === 'dark' && hasDocument) {
+        document.documentElement.classList.add('dark');
+      } else if (localStorage.darkMode === 'light' && hasDocument) {
+        document.documentElement.classList.remove('dark');
+      } else if (systemDarkMode && hasDocument) {
+        localStorage.setItem('darkMode', 'system');
+        document.documentElement.classList.add('dark');
+      } else if (hasDocument) {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+
     <base href="/" />
     <title>Zard UI - The @shadcn/ui Alternative for Angular</title>
   </head>
@@ -83,21 +145,8 @@
   <body
     class="text-foreground group/body bg-background overscroll-none antialiased [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
   >
-          		<script>
-			if (localStorage.theme !== 'default' && document && document.body)
-				document.body.classList.add('theme' + localStorage.theme);
-		</script>
     <div data-slot="layout" class="bg-background relative z-10 flex min-h-svh flex-col">
-
       <z-root></z-root>
-      <script type="module" src="/src/main.ts"></script>
-      		<script>
-			window.va =
-				window.va ||
-				function () {
-					(window.vaq = window.vaq || []).push(arguments);
-				};
-		</script>
     </div>
   </body>
 </html>

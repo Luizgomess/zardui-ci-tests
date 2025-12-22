@@ -5,6 +5,20 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
+/* Font face declaration with local fallback to prevent FOUTC */
+@font-face {
+  font-family: 'Geist';
+  src:
+    local('Geist Variable'),
+    local('Geist-Variable'),
+    local('Geist'),
+    local('Geist-Regular'),
+    url('https://fonts.gstatic.com/s/geist/v12/Inter.var.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --header-height: calc(var(--spacing) * 14);
   --footer-height: calc(var(--spacing) * 14);

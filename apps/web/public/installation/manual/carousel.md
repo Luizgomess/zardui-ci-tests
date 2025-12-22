@@ -14,9 +14,12 @@ import {
 } from '@angular/core';
 
 import { type ClassValue } from 'clsx';
-import type { EmblaCarouselType, EmblaEventType, EmblaPluginType, EmblaOptionsType } from 'embla-carousel';
+import type { EmblaCarouselType, EmblaEventType } from 'embla-carousel';
 import { EmblaCarouselDirective } from 'embla-carousel-angular';
 
+import { mergeClasses } from '@/shared/utils/merge-classes';
+
+import type { CarouselOptions, CarouselPlugins } from './carousel.types';
 import {
   carouselNextButtonVariants,
   carouselPreviousButtonVariants,
@@ -26,8 +29,6 @@ import {
 } from './carousel.variants';
 import { ZardButtonComponent } from '../button/button.component';
 import { ZardIconComponent } from '../icon/icon.component';
-
-import { mergeClasses } from '@/shared/utils/merge-classes';
 
 @Component({
   selector: 'z-carousel',
@@ -113,8 +114,8 @@ export class ZardCarouselComponent {
 
   // Public signals and outputs
   readonly class = input<ClassValue>('');
-  readonly zOptions = input<EmblaOptionsType>({ loop: false });
-  readonly zPlugins = input<EmblaPluginType[]>([]);
+  readonly zOptions = input<CarouselOptions>({ loop: false });
+  readonly zPlugins = input<CarouselPlugins>([]);
   readonly zOrientation = input<ZardCarouselOrientationVariants>('horizontal');
   readonly zControls = input<ZardCarouselControlsVariants>('button');
   readonly zInited = output<EmblaCarouselType>();
@@ -126,9 +127,10 @@ export class ZardCarouselComponent {
   protected readonly canScrollNext = signal<boolean>(false);
   protected readonly scrollSnaps = signal<number[]>([]);
   protected readonly subscribeToEvents: EmblaEventType[] = ['init', 'select', 'reInit'];
-  protected readonly options = computed(
-    () => ({ ...this.zOptions(), axis: this.zOrientation() === 'horizontal' ? 'x' : 'y' }) as EmblaOptionsType,
-  );
+  protected readonly options = computed<CarouselOptions>(() => ({
+    ...this.zOptions(),
+    axis: this.zOrientation() === 'horizontal' ? 'x' : 'y',
+  }));
 
   protected readonly dots = computed(() => new Array<string>(this.scrollSnaps().length).fill('.'));
 
@@ -346,6 +348,8 @@ export class ZardCarouselItemComponent {
 ```angular-ts title="carousel-plugins.service.ts" expandable="true" expandableTitle="Expand" copyButton showLineNumbers
 import { Injectable } from '@angular/core';
 
+import type { CarouselPlugin } from './carousel.types';
+
 /**
  * Service to create and manage Embla Carousel plugins
  */
@@ -365,7 +369,7 @@ export class ZardCarouselPluginsService {
       playOnInit?: boolean;
       rootNode?: (emblaRoot: HTMLElement) => HTMLElement | null;
     } = {},
-  ) {
+  ): Promise<CarouselPlugin> {
     try {
       const AutoplayModule = await import('embla-carousel-autoplay');
       const Autoplay = AutoplayModule.default;
@@ -389,7 +393,7 @@ export class ZardCarouselPluginsService {
       playOnInit?: boolean;
       rootElement?: HTMLElement;
     } = {},
-  ) {
+  ): Promise<CarouselPlugin> {
     const { rootElement, ...restOptions } = options;
     const autoplayOptions = {
       ...restOptions,
@@ -410,7 +414,7 @@ export class ZardCarouselPluginsService {
       dragging?: string;
       draggable?: string;
     } = {},
-  ) {
+  ): Promise<CarouselPlugin> {
     try {
       const ClassNamesModule = await import('embla-carousel-class-names');
       const ClassNames = ClassNamesModule.default;
@@ -430,7 +434,7 @@ export class ZardCarouselPluginsService {
       forceWheelAxis?: 'x' | 'y';
       target?: Element;
     } = {},
-  ) {
+  ): Promise<CarouselPlugin> {
     try {
       const { WheelGesturesPlugin } = await import('embla-carousel-wheel-gestures');
       return WheelGesturesPlugin(options);
@@ -459,6 +463,26 @@ const CAROUSEL_COMPONENTS = [ZardCarouselComponent, ZardCarouselContentComponent
   exports: [CAROUSEL_COMPONENTS],
 })
 export class ZardCarouselModule {}
+
+```
+
+
+
+```angular-ts title="carousel.types.ts" expandable="true" expandableTitle="Expand" copyButton showLineNumbers
+/**
+ * Carousel options - uses unknown to avoid ng-packagr portability issues with Embla's internal types
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type CarouselOptions = Record<string, any>;
+
+/**
+ * Carousel plugin - uses unknown to avoid ng-packagr portability issues with Embla's internal types
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type CarouselPlugin = any;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type CarouselPlugins = any[];
 
 ```
 
