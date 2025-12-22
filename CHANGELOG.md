@@ -1,3 +1,13 @@
+## 1.0.0-beta.12 (2025-12-22)
+
+### ✨ Features
+
+- update zardprovide to init darkmode service during bootstrap ([51423bf](https://github.com/Luizgomess/zardui-ci-tests/commit/51423bf))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.11 (2025-12-22)
 
 ### ✨ Features
