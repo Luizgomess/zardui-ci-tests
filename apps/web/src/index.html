@@ -106,59 +106,22 @@
     </style>
 
     <script>
-      // Enhanced Font Loading Strategy with better error handling and retries
+      // Font loading strategy
       document.documentElement.classList.add('font-loading');
 
-      // Extended timeout for slow connections and after inactivity
-      const FONT_LOAD_TIMEOUT = 3000; // 3 seconds
-      const FONT_RETRY_DELAY = 500; // 0.5 second retry delay
-      let fontLoadAttempts = 0;
-      const MAX_FONT_LOAD_ATTEMPTS = 2;
-
-      function attemptFontLoad() {
-        fontLoadAttempts++;
-
-        // Check if fonts are already loaded
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready
-            .then(function () {
-              document.documentElement.classList.remove('font-loading');
-              document.documentElement.classList.add('font-loaded');
-              console.log('Fonts loaded successfully');
-            })
-            .catch(function (error) {
-              console.warn('Font loading failed, attempting fallback:', error);
-              handleFontLoadFallback();
-            });
-        } else {
-          // Fallback for browsers without Font Loading API
-          console.log('Font Loading API not available, using timeout fallback');
-          handleFontLoadFallback();
-        }
-      }
-
-      function handleFontLoadFallback() {
-        if (fontLoadAttempts < MAX_FONT_LOAD_ATTEMPTS) {
-          console.log(`Font load attempt ${fontLoadAttempts} failed, retrying...`);
-          setTimeout(attemptFontLoad, FONT_RETRY_DELAY);
-        } else {
-          console.log('Max font load attempts reached, using system fonts');
+      // Check if fonts are already loaded
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
           document.documentElement.classList.remove('font-loading');
           document.documentElement.classList.add('font-loaded');
-        }
-      }
-
-      // Start font loading with timeout
-      setTimeout(function () {
-        if (document.documentElement.classList.contains('font-loading')) {
-          console.log('Font load timeout reached, forcing fallback');
+        });
+      } else {
+        // Fallback for browsers without Font Loading API
+        setTimeout(function () {
           document.documentElement.classList.remove('font-loading');
           document.documentElement.classList.add('font-loaded');
-        }
-      }, FONT_LOAD_TIMEOUT);
-
-      // Start the font loading process
-      attemptFontLoad();
+        }, 1000);
+      }
 
       let hasBody = !!document && !!document.body;
       let hasDocument = !!document && !!document.documentElement;
@@ -180,7 +143,7 @@
   </head>
 
   <body
-    class="text-foreground group/body bg-background font-loading overscroll-none antialiased [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
+    class="text-foreground group/body bg-background overscroll-none antialiased [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
   >
     <div data-slot="layout" class="bg-background relative z-10 flex min-h-svh flex-col">
       <z-root></z-root>

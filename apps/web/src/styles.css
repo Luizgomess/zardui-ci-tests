@@ -16,26 +16,7 @@
     url('https://fonts.gstatic.com/s/geist/v12/Inter.var.woff2') format('woff2-variations');
   font-weight: 100 900;
   font-style: normal;
-  font-display: block; /* Changed from swap to block to prevent FOUTC */
-}
-
-/* Ensure CSS variables are available immediately */
-:root {
-  --font-geist-sans:
-    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-.font-loaded {
-  --font-geist-sans: 'Geist', sans-serif;
-}
-
-/* Add font loading classes to body for better control */
-.font-loading body {
-  visibility: hidden;
-}
-
-.font-loaded body {
-  visibility: visible;
+  font-display: swap;
 }
 
 :root {
