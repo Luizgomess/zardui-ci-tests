@@ -1,3 +1,13 @@
+## 1.0.0-beta.13 (2025-12-22)
+
+### ⏪️ Reverts
+
+- Revert "✨ feat: update zardprovide to init darkmode service during bootstrap" ([1e5c54d](https://github.com/Luizgomess/zardui-ci-tests/commit/1e5c54d))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.12 (2025-12-22)
 
 ### ✨ Features
