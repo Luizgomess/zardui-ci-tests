@@ -1,3 +1,13 @@
+## 1.0.0-beta.16 (2025-12-22)
+
+### ✨ Features
+
+- additional AI fix for foutc ([b7318eb](https://github.com/Luizgomess/zardui-ci-tests/commit/b7318eb))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.15 (2025-12-22)
 
 ### ⏪️ Reverts
