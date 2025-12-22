@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles.css" />
 
     <link rel="icon" href="/site/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/site/apple-touch-icon.png" />
@@ -82,8 +83,20 @@
   <body
     class="text-foreground group/body bg-background overscroll-none antialiased [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]"
   >
+          		<script>
+			if (localStorage.theme !== 'default' && document && document.body)
+				document.body.classList.add('theme' + localStorage.theme);
+		</script>
     <div data-slot="layout" class="bg-background relative z-10 flex min-h-svh flex-col">
+
       <z-root></z-root>
+      		<script>
+			window.va =
+				window.va ||
+				function () {
+					(window.vaq = window.vaq || []).push(arguments);
+				};
+		</script>
     </div>
   </body>
 </html>
