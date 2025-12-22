@@ -1,3 +1,13 @@
+## 1.0.0-beta.7 (2025-12-22)
+
+### ✨ Features
+
+- dark mode change test ([2adf194](https://github.com/Luizgomess/zardui-ci-tests/commit/2adf194))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.6 (2025-12-22)
 
 This was a version bump only, there were no code changes.
