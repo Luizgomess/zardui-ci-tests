@@ -106,8 +106,11 @@
     </style>
 
     <script>
-      // Font loading strategy
+      // Safe Font loading strategy - extended timeout for better reliability
       document.documentElement.classList.add('font-loading');
+
+      // Extended timeout to handle slow connections and browser inactivity
+      const FONT_LOAD_TIMEOUT = 2000; // 2 seconds - safer than 1 second
 
       // Check if fonts are already loaded
       if (document.fonts && document.fonts.ready) {
@@ -115,13 +118,13 @@
           document.documentElement.classList.remove('font-loading');
           document.documentElement.classList.add('font-loaded');
         });
-      } else {
-        // Fallback for browsers without Font Loading API
-        setTimeout(function () {
-          document.documentElement.classList.remove('font-loading');
-          document.documentElement.classList.add('font-loaded');
-        }, 1000);
       }
+
+      // Always set timeout fallback to ensure content shows even if fonts fail
+      setTimeout(function () {
+        document.documentElement.classList.remove('font-loading');
+        document.documentElement.classList.add('font-loaded');
+      }, FONT_LOAD_TIMEOUT);
 
       let hasBody = !!document && !!document.body;
       let hasDocument = !!document && !!document.documentElement;
