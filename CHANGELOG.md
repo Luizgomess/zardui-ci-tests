@@ -1,3 +1,13 @@
+## 1.0.0-beta.19 (2025-12-23)
+
+### ✨ Features
+
+- server font optimization ([948dc07](https://github.com/Luizgomess/zardui-ci-tests/commit/948dc07))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.18 (2025-12-23)
 
 ### ✨ Features
