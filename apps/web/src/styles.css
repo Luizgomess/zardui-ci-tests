@@ -1,21 +1,14 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/geist';
 
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
-/* Font face declaration with Google Fonts URL and local fallback to prevent FOUTC */
-@font-face {
-  font-family: 'Geist';
-  src:
-    local('Geist Variable'),
-    local('Geist-Variable'),
-    url('https://fonts.gstatic.com/s/geist/v12/Geist-Variable.woff2') format('woff2-variations'),
-    url('https://fonts.gstatic.com/s/geist/v12/Geist-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: block; /* Prevent FOUTC by blocking render until font loads */
+body {
+  font-family: 'Geist Variable', sans-serif;
+  font-weight: 400;
 }
 
 :root {

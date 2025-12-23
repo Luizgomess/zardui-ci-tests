@@ -221,15 +221,6 @@ app.use((req, res, next) => {
   express.static(browserDistFolder, {
     maxAge: '1y',
     index: 'index.html',
-    setHeaders: (res, path) => {
-      if (path.endsWith('.woff2') || path.endsWith('.woff') || path.endsWith('.ttf')) {
-        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
-      }
-      // Ensure HTML is not overly cached to allow updates
-      if (path.endsWith('.html')) {
-        res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
-      }
-    },
   })(req, res, next);
 });
 
