@@ -1,3 +1,13 @@
+## 1.0.0-beta.30 (2025-12-23)
+
+### ✨ Features
+
+- static app font ([e5046fb](https://github.com/Luizgomess/zardui-ci-tests/commit/e5046fb))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.29 (2025-12-23)
 
 ### ✨ Features
