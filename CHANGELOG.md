@@ -1,3 +1,13 @@
+## 1.0.0-beta.18 (2025-12-23)
+
+### ✨ Features
+
+- providezard darkmode init ([5459799](https://github.com/Luizgomess/zardui-ci-tests/commit/5459799))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.17 (2025-12-22)
 
 ### ✨ Features
