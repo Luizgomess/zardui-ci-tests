@@ -1,3 +1,13 @@
+## 1.0.0-beta.28 (2025-12-23)
+
+### ✨ Features
+
+- static app font ([e81bc1e](https://github.com/Luizgomess/zardui-ci-tests/commit/e81bc1e))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.20 (2025-12-23)
 
 ### ✨ Features
