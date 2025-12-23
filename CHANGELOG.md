@@ -1,3 +1,13 @@
+## 1.0.0-beta.20 (2025-12-23)
+
+### ✨ Features
+
+- local vs remote font ([af57df5](https://github.com/Luizgomess/zardui-ci-tests/commit/af57df5))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.19 (2025-12-23)
 
 ### ✨ Features
