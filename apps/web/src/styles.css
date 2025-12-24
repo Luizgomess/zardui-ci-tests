@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/geist-mono';
+@import '@fontsource-variable/geist';
 
 @plugin 'tailwindcss-animate';
 
@@ -9,7 +11,8 @@
   --header-height: calc(var(--spacing) * 14);
   --footer-height: calc(var(--spacing) * 14);
   --sidebar-width: 16rem;
-  --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-sans: 'Geist Variable', sans-serif;
+  --font-geist-mono: 'Geist Variable Mono', monospace;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
