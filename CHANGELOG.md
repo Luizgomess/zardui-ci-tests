@@ -1,3 +1,13 @@
+## 1.0.0-beta.33 (2025-12-24)
+
+### ✨ Features
+
+- now add fontsource fonts ([6af255f](https://github.com/Luizgomess/zardui-ci-tests/commit/6af255f))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.32 (2025-12-24)
 
 ### ✨ Features
