@@ -26,6 +26,11 @@
         "stylePreprocessorOptions": {
           "includePaths": ["apps/web/src/css"]
         },
+        "optimization": {
+          "styles": {
+            "inlineCritical": true
+          }
+        },
         "scripts": [],
         "server": "apps/web/src/main.server.ts",
         "ssr": {
