@@ -1,3 +1,13 @@
+## 1.0.0-beta.38 (2025-12-24)
+
+### ✨ Features
+
+- let me try this approach ([2b9f35b](https://github.com/Luizgomess/zardui-ci-tests/commit/2b9f35b))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.37 (2025-12-24)
 
 ### ✨ Features
