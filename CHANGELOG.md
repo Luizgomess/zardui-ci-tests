@@ -1,3 +1,13 @@
+## 1.0.0-beta.35 (2025-12-24)
+
+### ✨ Features
+
+- ssr related config - missing part ([405bd61](https://github.com/Luizgomess/zardui-ci-tests/commit/405bd61))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.34 (2025-12-24)
 
 ### ✨ Features
