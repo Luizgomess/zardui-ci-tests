@@ -1,3 +1,13 @@
+## 1.0.0-beta.40 (2025-12-24)
+
+### ✨ Features
+
+- testing deployment discord notification ([4f4110b](https://github.com/Luizgomess/zardui-ci-tests/commit/4f4110b))
+
+### ❤️ Thank You
+
+- luiz gomes
+
 ## 1.0.0-beta.39 (2025-12-24)
 
 ### ✨ Features
