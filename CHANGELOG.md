@@ -1,3 +1,15 @@
+## 1.0.0-beta.31 (2025-12-24)
+
+### ⏪️ Reverts
+
+- Revert "✨ feat: static app font" ([89965cf](https://github.com/Luizgomess/zardui-ci-tests/commit/89965cf))
+- Revert "✨ feat: static app font" ([633a224](https://github.com/Luizgomess/zardui-ci-tests/commit/633a224))
+- Revert "✨ feat: static app font" ([acfa3f6](https://github.com/Luizgomess/zardui-ci-tests/commit/acfa3f6))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.30 (2025-12-23)
 
 ### ✨ Features
