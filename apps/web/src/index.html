@@ -1,12 +1,65 @@
 <!doctype html>
 <html lang="en" class="layout-fixed">
   <head>
+    <!-- <script id="theme-init">
+      (function () {
+        var theme = localStorage.getItem('darkMode');
+        var isDark =
+          theme === 'dark' ||
+          ((!theme || theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        // 1. Set the class for Tailwind/Components
+        document.documentElement.classList.toggle('dark', isDark);
+
+        // 2. FORCE the background color on the HTML element
+        // This ignores all CSS files and inlined styles
+        document.documentElement.style.setProperty('background-color', isDark ? '#121212' : '#ffffff', 'important');
+      })();
+    </script>
+    <style>
+      /* This prevents the 'body' from ever being white if the 'html' has the dark class */
+      html.dark,
+      html.dark body {
+        background-color: #121212 !important;
+        color: #ffffff !important;
+      }
+      /* Ensure the canvas color matches the theme immediately */
+      html {
+        background-color: #ffffff;
+      }
+      html.dark {
+        background-color: #121212;
+      }
+    </style> -->
     <meta charset="utf-8" />
     <base href="/" />
     <title>Zard UI - The @shadcn/ui Alternative for Angular</title>
     <link rel="icon" href="/site/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
+      var color = activeTheme === 'dark' ? '#121212' : '#ffffff';
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', color);
+
+      try {
+        var theme = localStorage.getItem('darkMode');
+        var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        var activeTheme = theme === 'dark' || (!theme && supportDarkMode) ? 'dark' : 'light';
+
+        if (activeTheme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+          document.documentElement.style.backgroundColor = '#121212';
+          console.log('dark background set');
+        } else {
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.style.backgroundColor = '#ffffff';
+        }
+      } catch (e) {
+        console.error('white background set', e);
+        document.documentElement.style.backgroundColor = '#ffffff';
+      }
+
       let hasDocument = !!document && !!document.documentElement;
       let systemDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (localStorage.darkMode === 'dark' && hasDocument) {
@@ -26,7 +79,6 @@
     <link rel="preconnect" href="https://i.ytimg.com" />
 
     <meta name="author" content="Luiz Gomes" />
-    <meta name="theme-color" content="#EBE9EA" />
 
     <meta
       name="description"
