@@ -1,3 +1,13 @@
+## 1.0.0-beta.32 (2025-12-24)
+
+### ✨ Features
+
+- try first without font ([eb2847c](https://github.com/Luizgomess/zardui-ci-tests/commit/eb2847c))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.31 (2025-12-24)
 
 ### ⏪️ Reverts
