@@ -5,17 +5,16 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
-/* Font face declaration with Google Fonts URL and local fallback to prevent FOUTC */
 @font-face {
   font-family: 'Geist';
-  src:
-    local('Geist Variable'),
-    local('Geist-Variable'),
-    url('https://fonts.gstatic.com/s/geist/v12/Geist-Variable.woff2') format('woff2-variations'),
-    url('https://fonts.gstatic.com/s/geist/v12/Geist-Variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: block; /* Prevent FOUTC by blocking render until font loads */
+  src: url('/fonts/Geist.woff2') format('woff2');
+  font-display: block; /* Forces the browser to wait briefly, minimizing the unstyled flash */
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono.woff2') format('woff2');
+  font-display: block; /* Forces the browser to wait briefly, minimizing the unstyled flash */
 }
 
 :root {
@@ -23,6 +22,7 @@
   --footer-height: calc(var(--spacing) * 14);
   --sidebar-width: 16rem;
   --font-geist-sans: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

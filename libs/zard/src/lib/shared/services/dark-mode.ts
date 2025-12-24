@@ -14,7 +14,7 @@ export type DarkModeOptions = EDarkModes.LIGHT | EDarkModes.DARK | EDarkModes.SY
 export class ZardDarkMode implements OnDestroy {
   private readonly document = inject(DOCUMENT);
 
-  private static readonly STORAGE_KEY = 'theme';
+  private static readonly STORAGE_KEY = 'darkMode';
   private handleThemeChange = (event: MediaQueryListEvent) => this.updateThemeMode(event.matches);
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private readonly themeSignal = signal<DarkModeOptions>(EDarkModes.SYSTEM);
