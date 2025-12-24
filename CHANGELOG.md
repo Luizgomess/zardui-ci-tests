@@ -1,3 +1,13 @@
+## 1.0.0-beta.37 (2025-12-24)
+
+### ✨ Features
+
+- this should be something that is working ([3a81581](https://github.com/Luizgomess/zardui-ci-tests/commit/3a81581))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.36 (2025-12-24)
 
 ### ✨ Features
