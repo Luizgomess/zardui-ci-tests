@@ -1,3 +1,13 @@
+## 1.0.0-beta.36 (2025-12-24)
+
+### ✨ Features
+
+- this should revert to something that is working ([ebf6576](https://github.com/Luizgomess/zardui-ci-tests/commit/ebf6576))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.35 (2025-12-24)
 
 ### ✨ Features
