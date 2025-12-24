@@ -1,3 +1,13 @@
+## 1.0.0-beta.39 (2025-12-24)
+
+### ✨ Features
+
+- flickering solution ([f383e6f](https://github.com/Luizgomess/zardui-ci-tests/commit/f383e6f))
+
+### ❤️ Thank You
+
+- Mickey Lazarevic @mikij
+
 ## 1.0.0-beta.38 (2025-12-24)
 
 ### ✨ Features
