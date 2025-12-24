@@ -223,7 +223,12 @@ app.use((req, res, next) => {
     index: 'index.html',
     setHeaders: (res, path) => {
       // Optimize caching for fonts to prevent FOUTC
-      if (path.endsWith('.woff2') || path.endsWith('.woff') || path.endsWith('.ttf')) {
+      if (
+        path.includes('fonts.googleapis.com') ||
+        path.endsWith('.woff2') ||
+        path.endsWith('.woff') ||
+        path.endsWith('.ttf')
+      ) {
         res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
       }
       // Ensure HTML is not overly cached to allow updates
