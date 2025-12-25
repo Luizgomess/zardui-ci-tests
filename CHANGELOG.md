@@ -1,3 +1,13 @@
+## 1.0.0-beta.42 (2025-12-25)
+
+### ✨ Features
+
+- deployment workflow ([a9c3d19](https://github.com/Luizgomess/zardui-ci-tests/commit/a9c3d19))
+
+### ❤️ Thank You
+
+- luiz gomes
+
 ## 1.0.0-beta.41 (2025-12-25)
 
 ### ✨ Features
