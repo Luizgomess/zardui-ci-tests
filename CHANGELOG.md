@@ -1,3 +1,13 @@
+## 1.0.0-beta.43 (2025-12-25)
+
+### ✨ Features
+
+- deployment workflow ([db5c12c](https://github.com/Luizgomess/zardui-ci-tests/commit/db5c12c))
+
+### ❤️ Thank You
+
+- luiz gomes
+
 ## 1.0.0-beta.42 (2025-12-25)
 
 ### ✨ Features
