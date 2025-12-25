@@ -1,3 +1,13 @@
+## 1.0.0-beta.41 (2025-12-25)
+
+### ✨ Features
+
+- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ([3bbb7d7](https://github.com/Luizgomess/zardui-ci-tests/commit/3bbb7d7))
+
+### ❤️ Thank You
+
+- luiz gomes
+
 ## 1.0.0-beta.40 (2025-12-24)
 
 ### ✨ Features
